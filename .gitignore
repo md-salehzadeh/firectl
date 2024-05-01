@@ -1,0 +1,15 @@
+# Ignore Mac files
+.DS_Store
+
+# Ignore cache
+__pycache__
+
+# Ignore ide files
+.idea
+.vscode/
+
+# Ignore Python byte-compile
+__pycache__/
+
+# Ignore dataset files
+datasets/*.jsonl
