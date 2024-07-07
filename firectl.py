@@ -1,5 +1,6 @@
 import argparse
-import utils, fine_tune, reset
+import fine_tune
+import reset
 
 parser = argparse.ArgumentParser()
 subparsers = parser.add_subparsers(dest="action", required=True, help="Action to run")
@@ -12,7 +13,9 @@ fineTuneParser.add_argument("--base-model", type=str, required=True, help="Base 
 fineTuneParser.add_argument("--dataset-id", type=str, required=False, help="Dataset ID")
 fineTuneParser.add_argument("--job-id", type=str, required=False, help="Job ID")
 fineTuneParser.add_argument("--model-id", type=str, required=False, help="Model ID")
+fineTuneParser.add_argument("--force-create", type=bool, required=False, help="create dataset and job based on the given parameters")
 fineTuneParser.add_argument("--settings-file", type=str, required=False, help="Whether to use settings file or not")
+fineTuneParser.add_argument("--epochs", type=int, required=False, help="Number of epochs")
 
 # Create subparser for "reset"
 resetParser = subparsers.add_parser("reset", help="Reset all data")

@@ -1,4 +1,5 @@
-import time, subprocess
+import time
+import subprocess
 import utils
 
 def uploadDataset(data):
@@ -19,9 +20,7 @@ def createFinetuningJob(data):
 		f'--model-id={data["model_id"]}',
 		f'--display-name={data["display_name"].replace(" ", "_")}',
 		f'--base-model={data["base_model"]}',
-		'--wandb-api-key=3ca3aca76eefe6a7974ff6d2496e2347fc7c4d33',
-		'--wandb-entity=e-estekhdam',
-		'--wandb-project=e-estekhdam',
+		f'--epochs={data["epochs"]}',
 	]
 
 	if data["settings_file"]:
@@ -87,6 +86,7 @@ def run(args):
 		"training_file": args.training_file,
 		"settings_file": args.settings_file,
 		"base_model": args.base_model,
+		"epochs": args.epochs or 0,
 	}
 
 	if data["base_model"].endswith("llama-v3-8b-instruct"):
@@ -101,7 +101,7 @@ def run(args):
 	print("=====================================\n")
 
 	# Dataset
-	if not args.dataset_id:
+	if not args.dataset_id or args.force_create:
 		status = False
 
 		tries = 0
@@ -131,7 +131,7 @@ def run(args):
 			exit(1)
 
 	# Fine tuning job
-	if not args.job_id:
+	if not args.job_id or args.force_create:
 		status = False
 
 		tries = 0
