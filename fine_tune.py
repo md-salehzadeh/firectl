@@ -57,8 +57,8 @@ def trackFinetuningJob(data):
 			if line.startswith('State: '):
 				jobResult["state"] = line.split('State:')[1].strip().upper()
 
-			elif line.strip().startswith('Code: '):
-				jobResult["status"]["code"] = line.strip().split('Code:')[1].strip().upper()
+			elif line.strip().startswith('Status: '):
+				jobResult["status"]["code"] = line.strip().split('Status:')[1].strip().upper()
 
 			elif line.strip().startswith('Message: '):
 				jobResult["status"]["message"] = line.strip().split('Message:')[1].strip().upper()
