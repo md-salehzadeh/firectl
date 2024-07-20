@@ -93,6 +93,8 @@ def run(args):
 		data["base_model"] = "meta-llama/Meta-Llama-3-8B-Instruct"
 	elif data["base_model"].endswith("llama-v3-70b-instruct"):
 		data["base_model"] = "meta-llama/Meta-Llama-3-70B-Instruct"
+	elif data["base_model"].endswith("yi-large"):
+		data["base_model"] = "01-ai/Yi-1.5-34B"
 
 	print("\n=====================================")
 	print(f"datasetId: {data['dataset_id']}")
