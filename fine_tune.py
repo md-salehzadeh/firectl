@@ -90,9 +90,9 @@ def run(args):
 	}
 
 	if data["base_model"].endswith("llama-v3-8b-instruct"):
-		data["base_model"] = "meta-llama/Meta-Llama-3.1-8B-Instruct"
+		data["base_model"] = "meta-llama/Meta-Llama-3-8B-Instruct"
 	elif data["base_model"].endswith("llama-v3-70b-instruct"):
-		data["base_model"] = "meta-llama/Meta-Llama-3.1-70B-Instruct"
+		data["base_model"] = "meta-llama/Meta-Llama-3-70B-Instruct"
 	elif data["base_model"].endswith("llama-v3-405b-instruct"):
 		data["base_model"] = "meta-llama/Meta-Llama-3.1-405B-Instruct"
 	elif data["base_model"].endswith("yi-large"):
