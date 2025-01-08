@@ -95,6 +95,8 @@ def run(args):
 		data["base_model"] = "meta-llama/Meta-Llama-3-70B-Instruct"
 	elif data["base_model"].endswith("llama-v3-405b-instruct"):
 		data["base_model"] = "meta-llama/Meta-Llama-3.1-405B-Instruct"
+	elif data["base_model"].endswith("llama-v3p1-70b-instruct"):
+		data["base_model"] = "accounts/fireworks/models/llama-v3p1-70b-instruct"
 	elif data["base_model"].endswith("yi-large"):
 		data["base_model"] = "01-ai/Yi-1.5-34B"
 
